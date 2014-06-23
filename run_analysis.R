@@ -2,7 +2,7 @@
 ## data, June 22th.
 
 ## i set my working directory.
-setwd("/Volumes/SAMSUNG/Backup Disco RCE/RCE 2012/Gestion de Calidad/Capacitaciones/Cursos Coursera/Getting and Cleanind Data/Final Project Files/UCI HAR Dataset")
+##setwd("/Volumes/SAMSUNG/Backup Disco RCE/RCE 2012/Gestion de Calidad/Capacitaciones/Cursos Coursera/Getting and Cleanind Data/Final Project Files/UCI HAR Dataset")
 ## start to loading the files
 
 ## activities and features
@@ -60,7 +60,7 @@ merged_X_filtered_features <- merged_X[,columns]
 ## with this new data frame, use melt and then dcast to obtain the desired result.
 library(reshape2)
 X_melted_table <- melt(merged_X_filtered_features,id=c("subject_id","activity_name"))
-summarized_X <- dcast(X_melted_table,subject_id+actitity_name~variable,mean)
+summarized_X <- dcast(X_melted_table,subject_id+activity_name~variable,mean)
 
 ## we need to write the results to a file for upload to Github (as required)
 write.table(summarized_X,'final_result.txt',sep='\t')
